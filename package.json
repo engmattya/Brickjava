@@ -2,9 +2,9 @@
   "name": "game",
   "version": "1.0.0",
   "description": "",
-  "main": "game.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node game.js",
+    "start": "node server.js",
     "test": "exit 0"
   },
   "keywords": [],
