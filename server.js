@@ -1,16 +1,14 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
+// Assuming your game files are in a folder named 'public'
+// Make sure the 'public' folder contains 'index.html', 'game.js', and any other assets
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+// Set the port to the default Azure provides, or 3000 for local development
+const port = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on https://copilotbrickbreaker.azurewebsites.net/:${443}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
